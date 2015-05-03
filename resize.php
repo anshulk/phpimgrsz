@@ -29,17 +29,14 @@ function resizeImage($imagePath, $width, $height, $filterType, $blur, $bestFit, 
     echo $imagick->getImageBlob();
 }
 
-if($_REQUEST['sample'] !== "")
-$filePath = $_REQUEST['sample'];
-else
-$filePath = $_REQUEST['img'];
-    
+$filePath = isset($_REQUEST['sample']) ? $_REQUEST['sample'] : $_REQUEST['img'] ;
 $height = $_REQUEST['height'];
 $width = $_REQUEST['width'];
-$ratio = $_REQUEST['ratio'];
-$blur = $_REQUEST['blur'];
-$cropZoom = $_REQUEST['crop'];
+$ratio = isset($_REQUEST['ratio']) ? $_REQUEST['ratio'] : 0 ;
+$blur = isset($_REQUEST['blur']) ? (double)$_REQUEST['blur'] : 0 ;
+$crop = isset($_REQUEST['crop']) ? $_REQUEST['crop'] : 0;
+$filter = $_REQUEST['crop'];
 
-echo resizeImage($filePath, $width, $height, IMAGICK::INTERPOLATE_AVERAGE, $blur, $ratio, 0);
+echo resizeImage($filePath, $width, $height, $filter, $blur, $ratio, $crop);
 
 ?>

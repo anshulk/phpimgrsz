@@ -19,7 +19,7 @@
 
 <body>
     <nav class="navbar navbar-inverse">
-        <div class="container navbar-text">
+        <div class="container col-md-11 navbar-text">
             <h3 align=center><span class="glyphicon glyphicon-resize-small"></span> Simple Image Resize in PHP!</h3>
         </div>
     </nav>
@@ -56,6 +56,43 @@
                 </div>
             </div>
             <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Filter to use :</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="filter">
+                        <option value="1">Point</option>
+                        <option value="2">Box</option>
+                        <option value="3">Triangle</option>
+                        <option value="4">Hermite</option>
+                        <option value="5">Hanning</option>
+                        <option value="6">Hamming</option>
+                        <option value="7">Blackman</option>
+                        <option value="8">Gaussian</option>
+                        <option value="9">Quadratic</option>
+                        <option value="10">Cubic</option>
+                        <option value="11">Catrom</option>
+                        <option value="12">Mitchell</option>
+                        <option value="22" selected="selected">Lanczos</option>
+                        <option value="13">Bessel/Jinc Filter</option>
+                        <option value="14">Sinc</option>
+                        <option value="16">Kaiser</option>
+                        <option value="17">Welsh</option>
+                        <option value="18">Parzen</option>
+                        <option value="21">Lagrange</option>
+                        <option value="19">Bohman</option>
+                        <option value="20">Bartlett</option>
+                        <option value="15">SincFast</option>
+                        <option value="26">Robidoux</option>
+                        <option value="23">LanczosSharp</option>
+                        <option value="24">Lanczos2</option>
+                        <option value="25">Lanczos2Sharp</option>
+                        <option value="27">RobidouxSharp</option>
+                        <option value="28">Cosine</option>
+                        <option value="29">Spline</option>
+                        <option value="30">LanczosRadius</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
                 <label for="" class="col-sm-3 control-label">Blur :</label>
                 <div class="col-sm-8">
                     <input class="form-control" type="number" name="blur" placeholder=">1 is blurry <1 is Sharp" />
@@ -65,14 +102,14 @@
                 <label for="" class="col-sm-3 control-label"></label>
                 <div class="col-sm-8">
                     <input type="checkbox" name="ratio" />
-                    <label>Maintain Aspect Ratio ?</label>
+                    <label>Maintain Aspect Ratio</label>
                 </div>
             </div>
             <div class="form-group">
                 <label for="" class="col-sm-3 control-label"></label>
                 <div class="col-sm-8">
                     <input type="checkbox" name="crop" />
-                    <label>CropZoom ?</label>
+                    <label>CropZoom</label>
                 </div>
             </div>
             <div class="form-group">
@@ -84,7 +121,7 @@
 
     </div>
     <div class="container col-md-6" id="imgdiv">
-        <img id="image" class="image" alt="Selected a sample image to show here."/>
+        <img id="image" class="image" alt="Selected a sample image to show here." />
     </div>
 
 </body>

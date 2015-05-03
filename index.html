@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Image resize - PHP
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="resize.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script>
+        function selectsample(imgselected) {
+            var imgdiv = document.getElementById("image");
+            imgdiv.src = imgselected.value;
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container navbar-text">
+            <h3 align=center><span class="glyphicon glyphicon-resize-small"></span> Simple Image Resize in PHP!</h3>
+        </div>
+    </nav>
+    <div class="container col-md-6">
+        <form class="form-horizontal" action="resize.php" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Image address :</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="text" name="img" placeholder="Relative path of image to resize" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">OR Choose one image :</label>
+                <div class="col-sm-8">
+                    <select class="form-control" name="sample" onchange="selectsample(this)">
+                        <option value="">Select a Sample</option>
+                        <option value="img/1.jpg">Sample 1</option>
+                        <option value="img/2.jpg">Sample 2</option>
+                        <option value="img/3.jpg">Sample 3</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Height :</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="number" name="height" placeholder="Height in pixels" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Width :</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="number" name="width" placeholder="Width in pixels" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label">Blur :</label>
+                <div class="col-sm-8">
+                    <input class="form-control" type="number" name="blur" placeholder=">1 is blurry <1 is Sharp" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label"></label>
+                <div class="col-sm-8">
+                    <input type="checkbox" name="ratio" />
+                    <label>Maintain Aspect Ratio ?</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="col-sm-3 control-label"></label>
+                <div class="col-sm-8">
+                    <input type="checkbox" name="crop" />
+                    <label>CropZoom ?</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-5">
+                    <button class="btn btn-primary btn-lg" type="submit" value="Resize Image" name="submit"><span class="glyphicon glyphicon-resize-small"></span> Resize Image</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="container col-md-6" id="imgdiv">
+        <img id="image" class="image" alt="Selected a sample image to show here."/>
+    </div>
+
+</body>
+
+</html>

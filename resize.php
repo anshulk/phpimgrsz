@@ -1,6 +1,8 @@
 <?php  
 function resizeImage($imagePath, $width, $height, $filterType, $blur, $bestFit, $cropZoom) {
     $imagick = new \Imagick(realpath($imagePath));
+    $width = empty($width) ? $imagick->getImageWidth() : $width;
+    $height = empty($height) ? $imagick->getImageHeight() : $height;
 
     $imagick->resizeImage($width, $height, $filterType, $blur, $bestFit);
 
@@ -35,7 +37,7 @@ $width = $_REQUEST['width'];
 $ratio = isset($_REQUEST['ratio']) ? $_REQUEST['ratio'] : 0 ;
 $blur = isset($_REQUEST['blur']) ? (double)$_REQUEST['blur'] : 0 ;
 $crop = isset($_REQUEST['crop']) ? $_REQUEST['crop'] : 0;
-$filter = $_REQUEST['crop'];
+$filter = $_REQUEST['filter'];
 
 echo resizeImage($filePath, $width, $height, $filter, $blur, $ratio, $crop);
 

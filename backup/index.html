@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Image resize - PHP
+    </title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h3>Simple image resize in PHP!</h3>
+    <form action="resize.php" method="post" enctype="multipart/form-data">
+        Relative path of image to resize:
+        <input type="text" name="img" />
+        <br/>Height :
+        <input type="number_format" name="height" />
+        <br/>Width :
+        <input type="number_format" name="width" />
+        <br/>Maintain Aspect Ratio ?
+        <input type="checkbox" name="ratio" />
+        <br/>
+        <input type="submit" value="Resize Image" name="submit" />
+    </form>
+</body>
+
+</html>
